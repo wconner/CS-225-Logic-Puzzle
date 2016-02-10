@@ -36,7 +36,7 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.93050194">
+            <state vertical-scroll-proportion="3.2664092">
               <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
               <folding />
             </state>
@@ -86,9 +86,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="992" />
+    <option name="x" value="65" />
     <option name="y" value="24" />
-    <option name="width" value="927" />
+    <option name="width" value="1845" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -447,15 +447,15 @@
       <workItem from="1455121000984" duration="32000" />
       <workItem from="1455121240962" duration="3941000" />
       <workItem from="1455125561713" duration="57000" />
-      <workItem from="1455129837702" duration="3453000" />
+      <workItem from="1455129837702" duration="4053000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7483000" />
+    <option name="totallyTimeSpent" value="8083000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="992" y="24" width="927" height="1056" extended-state="4" />
+    <frame x="65" y="24" width="1845" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -545,7 +545,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93050194">
+        <state vertical-scroll-proportion="3.2664092">
           <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
           <folding />
         </state>
