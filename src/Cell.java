@@ -9,7 +9,7 @@ public class Cell {
     public static final int HARD_FALSE = 2;
     public static final int CLEAR = 3;
 
-    private int currentState = HARD_FALSE;
+    private int currentState = CLEAR;
     private int correctState;
 
     public Cell(int correctState){ this.correctState = correctState;}
@@ -46,6 +46,22 @@ public class Cell {
             default:
                 System.out.println("Error in Cell -> buttonClicked");
                 return "ErrorCellButtonClicked";
+        }
+    }
+    
+    public int getCellColor()
+    {
+        switch (currentState){
+            case CLEAR: 
+                return 0;
+            case FALSE: 
+                return 1;
+            case TRUE: 
+                return 2;
+            case HARD_FALSE:
+                return 1;
+            default:
+                return 0;
         }
     }
 

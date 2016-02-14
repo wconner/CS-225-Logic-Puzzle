@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Game {
     private ArrayList<Cell[][]> matrices;
     private Cell[][] matrixA = new Cell[4][4], matrixB = new Cell[4][4], matrixC = new Cell[4][4];
+    private boolean victory;
 
     public Game(){
         matrices = new ArrayList<Cell[][]>();
@@ -20,9 +21,7 @@ public class Game {
             }
         for (int i = 0; i < 4; i++) {           /** Setting the correct cells to true cells */
             matrixB[i][i] = new Cell(Cell.TRUE);
-            for (int j = 3; j >= 0; j--){
-                matrixA[j][i] = new Cell(Cell.TRUE); matrixC[j][i] = new Cell(Cell.TRUE);
-            }
+            matrixA[3 - i][i] = new Cell(Cell.TRUE); matrixC[3 - i][i] = new Cell(Cell.TRUE);
         }
         matrices.add(matrixA); matrices.add(matrixB); matrices.add(matrixC);
     }
@@ -35,7 +34,7 @@ public class Game {
      * @param column The position of the column clicked
      */
     public void buttonClicked(int matrixNum, int row, int column){
-        parseButtonReturn(matrices.get(matrixNum)[row][column].buttonClicked(), matrixNum, row, column);
+        parseButtonReturn(matrices.get((matrixNum-1))[row][column].buttonClicked(), (matrixNum-1), row, column);
     }
 
     /**
@@ -60,9 +59,9 @@ public class Game {
             case "ChangeToSoft":
                 for (int i = 0; i < 4; i++){
                     if (i != row)
-                        matrices.get(matrixNum)[i][column].setCurrentState(Cell.FALSE);
+                        matrices.get(matrixNum)[i][column].setCurrentState(Cell.CLEAR);
                     if (i != column)
-                        matrices.get(matrixNum)[row][i].setCurrentState(Cell.FALSE);
+                        matrices.get(matrixNum)[row][i].setCurrentState(Cell.CLEAR);
                 }
                 break;
             default: System.out.println("Nothing to do here, Game -> parseButtonReturn");
@@ -99,12 +98,33 @@ public class Game {
                     else if (m[i][j].getCurrentState() == Cell.TRUE)
                         truesFound++;
                 }
-        if (truesFound == 12)
+        if (truesFound == 12){
             System.out.println("Congratulations, you won the game!.");
+            victory = true;
+        }
         else if (c > 0)
             System.out.println("There were " + c + " errors which have been cleared");
         else
             System.out.println("There were no errors.");
+    }
+    
+    public Cell[][] getMatrixa()
+    {
+        return matrices.get(0);
+    }
+    public Cell[][] getMatrixb()
+    {
+        return matrices.get(1);
+    }
+    public Cell[][] getMatrixc()
+    {
+        return matrices.get(2);
+    }
+    
+    //returns true if game has been won
+    public boolean getVictory()
+    {
+        return victory;
     }
 
     public static void main(String[] args){ new Game();}
